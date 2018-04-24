@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 #from django.contrib.auth.models import User
-from .customer import Customer
+from .customer import Customer, CustomerSerializer
 from .worker import Worker
 from .service import Service, ServiceSerializer
 # Create your views here.
@@ -9,3 +9,7 @@ from .service import Service, ServiceSerializer
 class ServiceViewSet(viewsets.ModelViewSet):
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
+
+class CustomerViewSet(viewsets.ModelViewSet):
+    queryset = Customer.objects.all()
+    serializer_class = CustomerSerializer
