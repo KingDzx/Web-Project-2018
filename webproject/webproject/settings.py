@@ -135,5 +135,5 @@ REST_FRAMEWORK = {
 }
 
 FIXTURE_DIRS = (
-   '../projectapp/fixtures/',
+   '../fixtures/',
 )

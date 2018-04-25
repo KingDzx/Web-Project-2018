@@ -19,6 +19,6 @@ def cat(request):
     categories = Service.objects.values()
 
     for line in categories:
-        print (line['service_type'])
+        print (line['service'])
 
     return render(request, 'categories/categories.html', {'cat':categories})
