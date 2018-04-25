@@ -15,4 +15,4 @@ six==1.10.0
 psycopg2
 djangorestframework
 django-datatable
-setuptools
+setuptools77
