@@ -12,7 +12,6 @@ pytz==2018.4
 pyxdg==0.25
 SecretStorage==2.3.1
 six==1.10.0
-psycopg2
-djangorestframework
-django-datatable
-setuptools77
+psycopg2==2.7.4
+djangorestframework==3.8.2
+django-datatable==0.3.1
