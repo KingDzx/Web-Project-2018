@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import View
 from rest_framework import viewsets
 #from django.contrib.auth.models import User
 from .customer import Customer, CustomerSerializer
@@ -18,6 +19,7 @@ class WorkerViewSet(viewsets.ModelViewSet):
     queryset = Worker.objects.all()
     serializer_class = WorkerSerializer
 
+
 def cat(request):
 
     categories = Service.objects.values()
@@ -26,3 +28,7 @@ def cat(request):
         print (line['service'])
 
     return render(request, 'categories/categories.html', {'cat':categories})
+
+def creSer(request):
+
+    return render(request, 'createSer/createSer.html')
