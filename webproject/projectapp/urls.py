@@ -7,6 +7,7 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register(r'service', views.ServiceViewSet)
 router.register(r'customer', views.CustomerViewSet)
+router.register(r'worker', views.WorkerViewSet)
 
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
