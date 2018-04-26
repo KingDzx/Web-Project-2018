@@ -5,7 +5,6 @@ from django.db.models import TextField
 from django.db.models import DateTimeField
 
 class Worker(models.Model):
-    workerID = models.AutoField(primary_key = True, default="-1")
     first_name = CharField(max_length = 100)
     last_name = CharField(max_length = 100)
     username = CharField(max_length = 100)
