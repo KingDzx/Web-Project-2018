@@ -1,23 +1,606 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <title>Service</title>
-</head>
-<body>
-    <br />
-    <div class="container">
-        <ul class="nav nav-pills navbar">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Catigories</a></li>
-            <li><a href="#">About Us</a></li>
-        </ul>
-    </div>
+<html>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<head>
+	<title> Service4You - Home </title>
+	<!--/metadata -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+    <!--//metadata -->
+    {% load staticfiles %}
+	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/easy-responsive-tabs.css' %}" rel='stylesheet' type='text/css'/>
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="all" /><!-- for testimonials -->
+<link rel="stylesheet" href="{% static 'css/swipebox.css' %}">
+
+	<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+	<!-- //for bootstrap working -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+	<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic'
+	    rel='stylesheet' type='text/css'>
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700" rel="stylesheet">
+</head>
+
+<body>
+	<!-- header -->
+	<div class="header" id="home">
+		<div class="content white">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button> -->
+						<a class="navbar-brand" href="index.html">
+							<h1 class="logoType" ><span><img class="logo" src="{% static 'images/logo.png' %}"></span>Service4You </h1>
+						</a>
+					</div>
+					<!--/.navbar-header-->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<nav>
+							<ul class="nav navbar-nav">
+								<li><a class="active" href="index.html">Home</a></li>
+								<li><a class="scroll" href="#categories" >Categories</a></li>
+								<li><a class="scroll" href="#register">Register</a></li>
+							</ul>
+						</nav>
+					</div>
+					<!--/.navbar-collapse-->
+					<!--/.navbar-->
+				</div>
+			</nav>
+		</div>
+	</div>
+	<!-- banner -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+			<li data-target="#myCarousel" data-slide-to="2" class=""></li>
+			<li data-target="#myCarousel" data-slide-to="3" class=""></li>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<div class="container">
+					<div class="carousel-caption">
+						<h3>Mobile Phone Repairs</h3>
+						<p>Solutions made easy</p>
+						
+					</div>
+				</div>
+			</div>
+			<div class="item item2">
+				<div class="container">
+					<div class="carousel-caption">
+						<h3>House Cleaning Services</h3>
+						<p>You deserve the best</p>
+						
+					</div>
+				</div>
+			</div>
+			<div class="item item3">
+				<div class="container">
+					<div class="carousel-caption">
+						<h3>Yard and Outdoor Services</h3>
+						<p>Solutions made easy</p>
+						
+					</div>
+				</div>
+			</div>
+			<div class="item item4">
+				<div class="container">
+					<div class="carousel-caption">
+
+						<h3>Home Theater</h3>
+						<p>Set up and installation</p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<span class="fa fa-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<span class="fa fa-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+		<!-- The Modal -->
+	</div>
+	<!--//banner -->
+	<!--/icons-->
+	<div class="banner-bottom" id="about">
+		<div class="container">
+		<div class="w3-heading-all">
+				<h3>Reviews and Ratings</h3>
+			</div>
+			<div class="inner_sec_info_agileits_w3">
+				<div class="row">
+					<div class="col-md-4 grid_info">
+						<div class="icon_info">
+							<p style="text-align:left">
+								<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+								<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+								<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+								<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+								<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+							</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+							<div class="client">
+								<img width="50%" height="50%"src="{% static 'images/review1.jpg' %}" alt="" />
+								<h5>Cloud Strife</h5>
+								<div class="clearfix"> </div>
+							</div>						
+						</div>
+					</div>
+					<div class="col-md-4 grid_info">
+						<div class="icon_info">
+							<p style="text-align:left">
+								<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+								<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+								<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+								<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+							</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+							<div class="client">
+							<img src="{% static 'images/c2.jpg' %}" alt="" />
+								<h5>Brick Tamland</h5>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 grid_info">
+						<div class="icon_info">
+							<p style="text-align:left">
+								<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+								<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+							</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+							<div class="client">
+							<img src="{% static 'images/c3.jpg' %}" alt="" />
+								<h5>Ron Burgundy</h5>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row reviewsRow">
+						<div class="col-md-4 grid_info">
+							<div class="icon_info">
+								<p style="text-align:left">
+									<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+									<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+									<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+								</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+								<div class="client">
+									<img src="{% static 'images/c1.jpg' %}" alt="" />
+									<h5>Brian Fantana</h5>
+									<div class="clearfix"> </div>
+								</div>						
+							</div>
+						</div>
+						<div class="col-md-4 grid_info">
+							<div class="icon_info">
+								<p style="text-align:left">
+									<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+									<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+									<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+									<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+									<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+								</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+								<div class="client">
+								<img src="{% static 'images/c2.jpg' %}" alt="" />
+									<h5>Brick Tamland</h5>
+									<div class="clearfix"> </div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 grid_info">
+							<div class="icon_info">
+									<p style="text-align:left">
+										<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+										<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+										<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+										<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+									</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+								<div class="client">
+								<img src="{% static 'images/c3.jpg' %}" alt="" />
+									<h5>Ron Burgundy</h5>
+									<div class="clearfix"> </div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--//icons-->
+	<!--//banner-bottom-->
+	<!-- services -->
+	<!-- <div class="services" id="services"> 
+		<div class="container"> 
+					<div class="agileits-title"> 
+				<div class="w3-heading-all">
+				<h3>Services</h3>
+			</div>
+				<div class="clearfix"> </div>
+			</div>
+		<div id="horizontalTab">
+		<ul class="resp-tabs-list">
+			<li><i class="fa fa-align-right" aria-hidden="true"></i> LOGGING</li>
+			<li><i class="fa fa-braille" aria-hidden="true"></i> HARVESTING</li>
+			<li><i class="fa fa-life-ring" aria-hidden="true"></i> MANUFACTURING</li>
+			<li><i class="fa fa-home" aria-hidden="true"></i> HOME WOOD WORK</li>
+		</ul>
+		<div class="resp-tabs-container">
+		
+			<div class="tab1">
+				<div class="col-md-6 tab-info-img">
+						<img src="images/s11.jpg" alt="img">
+				</div>
+				<div class="col-md-6 tab-info">
+					     <h4>Design with 100% Pure Quality</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at placerat ante. Praesent nulla nunc, pretium dapibus efficitur in, auctor eget elit. Lorem ipsum dolor sit amet fusce eget erat nunc. Sed fringilla sem vitae mi interdum commodo.</p>
+				
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="tab2">
+				
+				<div class="col-md-6 tab-info">
+					     <h4>Lorem ipsum dolor sit amet</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at placerat ante. Praesent nulla nunc, pretium dapibus efficitur in, auctor eget elit. Lorem ipsum dolor sit amet fusce eget erat nunc. Sed fringilla sem vitae mi interdum commodo.</p>
+				
+				</div>
+				<div class="col-md-6 tab-info-img">
+						<img src="images/s22.jpg" alt="img">
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		
+			<div class="tab3">
+					
+				<div class="col-md-6 tab-info-img">
+						<img src="images/s33.jpg" alt="img">
+				</div>
+				<div class="col-md-6 tab-info">
+					     <h4>Lorem ipsum dolor sit amet</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at placerat ante. Praesent nulla nunc, pretium dapibus efficitur in, auctor eget elit. Lorem ipsum dolor sit amet fusce eget erat nunc. Sed fringilla sem vitae mi interdum commodo.</p>
+				
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="tab4">
+				
+				<div class="col-md-6 tab-info">
+					     <h4>Lorem ipsum dolor sit amet</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at placerat ante. Praesent nulla nunc, pretium dapibus efficitur in, auctor eget elit. Lorem ipsum dolor sit amet fusce eget erat nunc. Sed fringilla sem vitae mi interdum commodo.</p>
+				
+				</div>
+				<div class="col-md-6 tab-info-img">
+						<img src="images/s44.jpg" alt="img">
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>	
+ 
+		</div>
+	</div> -->
+	<!-- //services --> 
+
+<!-- stats -->
+	<!-- <div class="stats" id="stats">
+		<div class="container">
+			<div class="col-md-3 w3layouts_stats_left w3_counter_grid">
+				<span class="fa fa-smile-o" aria-hidden="true"></span>
+				<p class="counter">45</p>
+				<h3>Happy Clients</h3>
+			</div>
+			<div class="col-md-3 w3layouts_stats_left w3_counter_grid1">
+				<span class="fa fa-instagram" aria-hidden="true"></span>
+				<p class="counter">165</p>
+				<h3>Instagram</h3>
+			</div>
+			<div class="col-md-3 w3layouts_stats_left w3_counter_grid2">
+				<span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+				<p class="counter">563</p>
+				<h3>Completed Work </h3>
+			</div>
+			<div class="col-md-3 w3layouts_stats_left w3_counter_grid3">
+				<span class="fa fa-trophy" aria-hidden="true"></span>
+				<p class="counter">245</p>
+				<h3>Awards Won </h3>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	//stats -->
+
+<!-- Clients -->
+<!-- 
+	<div class="col-md-6 clients-left">
+			
+	</div>
+
+	<div class=" col-md-6 clients">
+			<h3>Testimonials</h3>
+			<span></span>
+			<section class="slider">
+				<div class="flexslider">
+					<ul class="slides">
+						<li>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+								<div class="client">
+									<img src="images/c1.jpg" alt="" />
+									<h5>Brian Fantana</h5>
+									<div class="clearfix"> </div>
+								</div>
+						</li>
+						<li>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+								<div class="client">
+								<img src="images/c2.jpg" alt="" />
+									<h5>Brick Tamland</h5>
+									<div class="clearfix"> </div>
+								</div>
+						</li>
+						<li>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+								<div class="client">
+								<img src="images/c3.jpg" alt="" />
+									<h5>Ron Burgundy</h5>
+									<div class="clearfix"> </div>
+								</div>
+						</li>
+						<li>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+								<div class="client">
+								<img src="images/c4.jpg" alt="" />
+									<h5>Arturo Mendez</h5>
+									<div class="clearfix"> </div>
+								</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+</div>
+			<div class="clearfix"> </div> -->
+<!-- //Clients -->
+<!-- /contact us -->
+<div class="contact-w3-agileits w3ls-section jarallax" id="contact">
+		<div class="container">
+		<div class="w3-heading-all">
+				<h3>Contact us</h3>
+			</div>
+			<div class="col-md-5 col-sm-5 col-xs-12 contact-left-w3ls">				
+				<div class="visit">
+					<div class="col-md-2 col-sm-2 col-xs-2 contact-icon-wthree">
+						<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+					</div>
+					<div class="col-md-10 col-sm-10 col-xs-10 contact-text-agileinf0">
+						<h4>Visit us</h4>
+						<p>2264 Sundown Lane, Texas</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="mail">
+					<div class="col-md-2 col-sm-2 col-xs-2 contact-icon-wthree">
+						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+					</div>
+					<div class="col-md-10 col-sm-10 col-xs-10 contact-text-agileinf0">
+						<h4>Mail us</h4>
+						<p><a href="mailto:info@example.com">info@example.com</a></p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="call">
+					<div class="col-md-2 col-sm-2 col-xs-2 contact-icon-wthree">
+						<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+					</div>
+					<div class="col-md-10 col-sm-10 col-xs-10 contact-text-agileinf0">
+						<h4>Call us</h4>
+						<p>+123456789</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="visit">
+					<div class="col-md-2 col-sm-2 col-xs-2 contact-icon-wthree">
+						<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+					</div>
+					<div class="col-md-10 col-sm-10 col-xs-10 contact-text-agileinf0">
+						<h4>Business hours</h4>
+						<p>Mon-Sat 09:00 AM - 07:00PM</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="col-md-7 col-sm-7 col-xs-12 contact-right-w3l">
+				<form action="#" method="post">
+					<input type="text"  class="name" name="name" placeholder="First Name" required="">
+					<input type="text"  class="name" name="name" placeholder="Last Name" required="">
+					<input type="text"  class="name" name="name" placeholder="Email" required="">
+					<input type="text"  class="name" name="name" placeholder="Subject" required="">
+					<textarea placeholder="Your Message" required=""></textarea>
+					<input type="submit" value="SEND MESSAGE">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+<!-- //contact us -->
+<!--footer-->
+
+	<div class="footer">
+		<nav>
+			<ul class="nav-buttom">
+				<li><a class="scroll" href="#home">Home</a></li>
+				<li><a class="scroll" href="#about">About</a></li>
+				<li><a class="scroll" href="#services">Services</a></li>
+				<li><a class="scroll" href="#gallery">Gallery</a></li>
+				<li><a class="scroll" href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="container">
+		<div class="colr-row col-md-6  ">
+			<div class="col-md-6 col-sm-6 col-xs-6  bottom-head bottm-grid">
+				<h2><a href="index.html">Wooden</a></h2>
+				<span class="cap">Lorem Ipsum</span>
+				<div class="clearfix"> </div>
+			</div>
+			
+			<div class="col-md-6 col-sm-6 col-xs-6 copyright bottm-grid">
+				<h3>Follow us</h3>
+				<div class="icons">
+					<ul>
+						<li><a href="#"><span class="fa fa-facebook"></span></a></li>
+						<li><a href="#"><span class="fa fa-twitter"></span></a></li>
+						<li><a href="#"><span class="fa fa-rss"></span></a></li>
+						<li><a href="#"><span class="fa fa-vk"></span></a></li>
+					</ul>
+
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="clearfix"> </div>
+			</div>
+			<div class="colr-row  col-md-6">
+			<div class="col-md-6 col-sm-6 col-xs-6 one bottm-grid">
+				<h3>About us</h3>
+				<p> enim. Aliquam lorem ante, dapibus in,Aliquam lorem ante </p>
+				<div class="clearfix"></div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-6 three bottm-grid">
+				<h3>Contact</h3>
+				<div class="addres up-out">
+					<p><span class="fa fa-map-marker icons-left" aria-hidden="true"></span>333 Broome St New York</p>
+
+					<p><span class="fa fa-phone icons-left" aria-hidden="true"></span>Call us:+9900887766</p>
+
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<!-- //Copyright -->
+			<div class="clearfix"> </div>
+		</div>
+		</div>
+	</div>
+	<footer>
+		<p>&copy;2018 Wooden. All Rights Reserved | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a></p>
+	</footer>
+
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+		<!-- script for responsive tabs -->	
+<!-- start-smoth-scrolling -->
+<script src="js/SmoothScroll.min.js"></script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+<!-- start-smoth-scrolling -->
+
+<!-- start-smoth-scrolling -->		
+<script src="js/easy-responsive-tabs.js"></script>
+<script>
+$(document).ready(function () {
+$('#horizontalTab').easyResponsiveTabs({
+type: 'default', //Types: default, vertical, accordion           
+width: 'auto', //auto or any width like 600px
+fit: true,   // 100% fit in a container
+closed: 'accordion', // Start closed if in accordion view
+activate: function(event) { // Callback function if tab is switched
+var $tab = $(this);
+var $info = $('#tabInfo');
+var $name = $('span', $info);
+$name.text($tab.text());
+$info.show();
+}
+});
+$('#verticalTab').easyResponsiveTabs({
+type: 'vertical',
+width: 'auto',
+fit: true
+});
+});
+</script>
+
+		<!-- swipe box js -->
+	<script src="js/jquery.swipebox.min.js"></script> 
+	    <script type="text/javascript">
+			jQuery(function($) {
+				$(".swipebox").swipebox();
+			});
+	</script>
+<!-- //swipe box js -->
+		
+
+			<!-- FlexSlider-JavaScript -->
+	<script defer src="js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			SyntaxHighlighter.all();
+				});
+				$(window).load(function(){
+				$('.flexslider').flexslider({
+					animation: "slide",
+					start: function(slider){
+						$('body').removeClass('loading');
+					}
+			});
+		});
+	</script>
+	<!-- //FlexSlider-JavaScript -->
+	<!-- stats -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.countup.js"></script>
+	<script>
+		$('.counter').countUp();
+	</script>
+	<!-- //stats -->
 </body>
+
 </html>
