@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import View
 from rest_framework import viewsets
@@ -28,15 +28,35 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
 class cat(View):
     def get(self,request):
-        categories = Service.objects.values()
-        for line in categories:
-            print(line['service'])
-        return render(request, 'categories/categories.html', {'cat':categories})
+        services = Service.objects.all()
+        #for line in services:
+            #print(line['service'])
+        return render(request, 'webpage/index.html', {'services':services})
+
+class vewSer(View):
+    def get(self,request):
+        services = Service.objects.all()
+        return render(request, 'services/service.html', {'services':services})
+
+class reView(View):
+    def get(self,request):
+        service = Service.objects.all()
+        rev = Review.objects.all()
+        #for line in rev:
+            #print()
+            #print(line['services'])
+            #print(line['rating'])
+            #print(line['message'])
+        return render(request, 'review/review.html', {'review':rev})
+
+class creUser(View):
+    def get(self,request):
+        return render(request, 'webpage/form.html')
 
 class creSer(View):
     def get(self,request):
         form = ServiceForm()
-        return render(request, 'createSer/createSer.html',{'form':form})
+        return render(request, 'webpage/registerServiceForm.html',{'form':form})
 
     def post(self,request):
         form = ServiceForm()
@@ -49,6 +69,6 @@ class creSer(View):
                 service.address = form.cleaned_data['address']
                 service.description = form.cleaned_data['description']
                 form.save()
-                return HttpResponseRedirect("/?openr=cat&res=true")
+                return HttpResponseRedirect("/home")
         return render(request, 'createSer/createSer.html')
             
