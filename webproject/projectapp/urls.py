@@ -10,11 +10,12 @@ router.register(r'worker', views.WorkerViewSet)
 router.register(r'review', views.ReviewViewSet)
 
 urlpatterns = [
+    path('', views.cat.as_view()),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api/', include(router.urls)),
-    path('home', views.cat.as_view()),
+    url(r'^home/$', views.cat.as_view(), name='home'),
     path('creSer', views.creSer.as_view()),
-    path('creUser', views.creUser.as_view()),
+    url(r'creUser/$', views.UserFormView.as_view(), name='creUser'),
     path('review', views.reView.as_view()),
     path('services', views.vewSer.as_view()),
     path('getCatSer', views.getCategoryServices.as_view()),
