@@ -22,3 +22,8 @@ def cat(request):
         print (line['service'])
 
     return render(request, 'categories/categories.html', {'cat':categories})
+
+
+def home(request):
+
+    return render(request, 'homepage/home.html')
