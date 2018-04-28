@@ -12,6 +12,11 @@ router.register(r'review', views.ReviewViewSet)
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api/', include(router.urls)),
-    path('', views.cat.as_view()),
+    path('home', views.cat.as_view()),
     path('creSer', views.creSer.as_view()),
+    path('creUser', views.creUser.as_view()),
+    path('review', views.reView.as_view()),
+    path('services', views.vewSer.as_view()),
+    path('getCatSer', views.getCategoryServices.as_view()),
+    path('getSer', views.getService.as_view()),
 ]
