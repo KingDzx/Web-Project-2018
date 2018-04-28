@@ -1,13 +1,14 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, redirect, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import View
+from django.contrib.auth import authenticate, login
 from rest_framework import viewsets
 from .customer import Customer, CustomerSerializer
 from .worker import Worker, WorkerSerializer
 from .service import Service, ServiceSerializer
 from .review import Review, ReviewSerializer
 from django.views import View
-from .forms import ServiceForm
+from .forms import ServiceForm, UserForm
 # Create your views here.
 
 class ServiceViewSet(viewsets.ModelViewSet):
@@ -49,10 +50,6 @@ class reView(View):
             #print(line['message'])
         return render(request, 'webpage/browseReviews.html', {'review':rev})
 
-class creUser(View):
-    def get(self,request):
-        return render(request, 'webpage/form.html')
-
 class creSer(View):
     def get(self,request):
         form = ServiceForm()
@@ -87,3 +84,39 @@ class getService(View):
 class createReview(View):
     def get(self,request):
         return render(request, 'webpage/writeReview.html')
+
+class UserFormView(View):
+
+    form_class = UserForm
+    template_name = 'webpage/form.html'
+
+    #Display a blank form
+    def get(self, request):
+        form = self.form_class(None)
+        return render(request, self.template_name, {'form': form})
+
+    #Process form data
+    def post(self, request):
+        form = self.form_class(request.POST)
+
+        if form.is_valid():
+            user = form.save(commit=False)
+
+            #cleaned (normalized) data
+
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+
+            user.username = username
+            user.set_password(password)
+            user.save()
+
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    
+                    return redirect('/home')
+
+        return render(request, self.template_name, {'form': form})
