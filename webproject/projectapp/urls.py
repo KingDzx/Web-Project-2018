@@ -20,4 +20,6 @@ urlpatterns = [
     path('services', views.vewSer.as_view()),
     path('getCatSer', views.getCategoryServices.as_view()),
     path('getSer', views.getService.as_view()),
+    path('write', views.writeView.as_view()),
+    path('viz', views.vizView.as_view()),
 ]

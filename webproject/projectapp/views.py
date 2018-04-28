@@ -9,6 +9,7 @@ from .service import Service, ServiceSerializer
 from .review import Review, ReviewSerializer
 from django.views import View
 from .forms import ServiceForm, UserForm
+import json
 # Create your views here.
 
 class ServiceViewSet(viewsets.ModelViewSet):
@@ -30,8 +31,9 @@ class ReviewViewSet(viewsets.ModelViewSet):
 class cat(View):
     def get(self,request):
         services = Service.objects.all()
-        #for line in services:
-            #print(line['service'])
+        # for line in services:
+        #     s = json.dumps(line)
+        #     print(s)
         return render(request, 'webpage/index.html', {'services':services})
 
 class vewSer(View):
@@ -49,6 +51,10 @@ class reView(View):
             #print(line['rating'])
             #print(line['message'])
         return render(request, 'webpage/browseReviews.html', {'review':rev})
+
+class writeView(View):
+    def get(self,request):
+        return render(request, 'webpage/writeReview.html')
 
 class creUser(View):
     def get(self,request):
@@ -120,3 +126,9 @@ class UserFormView(View):
                     return redirect('/home')
 
         return render(request, self.template_name, {'form': form})
+
+
+class vizView(View):
+
+    def get(self, request):
+        return render(request, 'webpage/visualization.html')
