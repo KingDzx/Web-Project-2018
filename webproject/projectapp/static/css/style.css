@@ -640,6 +640,20 @@ b.fa.fa-caret-right {
     margin-bottom: 30px;
 	 text-align: center;
 }
+
+.w3-heading-all2 h3 {
+   font-size: 2.5em;
+    color: white;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+		margin-top: 10px;
+	 	text-align: center;
+		vertical-align: middle;
+}
+
 .about,.team,.gallery,.welcome,.contact-w3-agileits,.banner-bottom,.services{
 padding:4em 0;
 }
@@ -818,6 +832,14 @@ ul.some_agile_facts label {
 }
 .agileits-title {
     text-align: center;
+}
+
+.agileits-title2 {
+    text-align: center;
+		vertical-align: middle;
+		line-height: 90px;
+		background-color: darkgreen;
+		margin-top: -10px;
 }
 
 .agileits-welcome-info P {
@@ -1968,7 +1990,7 @@ li{
 		letter-spacing: 1px;
 		text-transform: uppercase;
 		font-weight: 600;
-		padding: 35px 34px;
+		padding: 37px 34px;
 		text-align: center;
 		vertical-align: middle;
 		line-height: 90px;
@@ -2006,3 +2028,61 @@ li{
 .dropdown a:hover {background-color: #ddd}
 
 .show {display:block;}
+
+.bs-body{
+	height: 3000px;
+	background: white;
+}
+.service-list{
+	height: 3000px;
+	background: white;
+}
+.service-container{
+	width:440px;
+	height: 270px;
+	background-color: palegreen;
+	margin: 10px;
+	display: inline-block;
+}
+
+.service-title{
+	background-color:black;
+	color: white;
+	width:440px;
+	height:50px;
+	font-size:25px;
+	text-transform: uppercase;
+	text-align: center;
+	vertical-align: middle;
+}
+
+img{
+	text-align:left;
+	padding:10px;
+	height:200px;
+	width:200px;
+}
+
+.service-desc{
+	letter-spacing: 1px;
+	font-size: 13.5px;
+	line-height: 1.9em;
+	color: #555;
+	width:261px;
+	height:165px;
+	text-align: -webkit-left;
+	margin: -207px 190px;
+	padding: 10px;
+}
+
+#sc1, #sc4. #sc7, #sc10, #sc13, #sc16, #sc19, #sc22, #sc25, #sc28, #sc31{
+	margin:10px 10px;
+}
+
+#sc2, #sc5,#sc8, #sc11, #sc14, #sc17, #sc20, #sc23, #sc26, #sc29, #sc32{
+	margin: 27px -7px;
+}
+
+#sc3, #sc6, #sc9, #sc12, #sc15, #sc18, #sc21, #sc24, #sc27, #sc30, #sc33{
+	margin: -13px 7px;
+}

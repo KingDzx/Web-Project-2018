@@ -23,9 +23,9 @@ body {
 
 #register-box {
   position: relative;
-  margin: 1% auto;
+  margin: 0.5% auto;
   width: 400px;
-  height: 550px;
+  height: 520px;
   background: #FFF;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);

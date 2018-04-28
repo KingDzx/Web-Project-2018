@@ -17,4 +17,6 @@ urlpatterns = [
     path('creUser', views.creUser.as_view()),
     path('review', views.reView.as_view()),
     path('services', views.vewSer.as_view()),
+    path('getCatSer', views.getCategoryServices.as_view()),
+    path('getSer', views.getService.as_view()),
 ]

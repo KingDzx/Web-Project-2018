@@ -36,7 +36,7 @@ class cat(View):
 class vewSer(View):
     def get(self,request):
         services = Service.objects.all()
-        return render(request, 'services/service.html', {'services':services})
+        return render(request, 'webpage/browseServices.html', {'services':services})
 
 class reView(View):
     def get(self,request):
@@ -47,7 +47,7 @@ class reView(View):
             #print(line['services'])
             #print(line['rating'])
             #print(line['message'])
-        return render(request, 'review/review.html', {'review':rev})
+        return render(request, 'webpage/browseReviews.html', {'review':rev})
 
 class creUser(View):
     def get(self,request):
@@ -70,5 +70,16 @@ class creSer(View):
                 service.description = form.cleaned_data['description']
                 form.save()
                 return HttpResponseRedirect("/home")
-        return render(request, 'createSer/createSer.html')
-            
+        return render(request, 'webpage/registerServiceForm.html',{'form':form})
+
+class getCategoryServices(View):
+    def get(self,request):
+        data = request.GET['category']
+        services = Service.objects.filter(service = data)
+        return render(request, 'webpage/catListing.html',{'services':services})
+
+class getService(View):
+    def get(self,request):
+        data = request.GET['id']
+        service = Service.objects.filter(id = data)
+        return render(request, 'webpage/service.html',{'service':service})
