@@ -83,3 +83,7 @@ class getService(View):
         data = request.GET['id']
         service = Service.objects.filter(id = data)
         return render(request, 'webpage/service.html',{'service':service})
+
+class createReview(View):
+    def get(self,request):
+        return render(request, 'webpage/writeReview.html')

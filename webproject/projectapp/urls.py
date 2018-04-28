@@ -15,6 +15,7 @@ urlpatterns = [
     path('home', views.cat.as_view()),
     path('creSer', views.creSer.as_view()),
     path('creUser', views.creUser.as_view()),
+    path('creRe', views.createReview.as_view()),
     path('review', views.reView.as_view()),
     path('services', views.vewSer.as_view()),
     path('getCatSer', views.getCategoryServices.as_view()),
