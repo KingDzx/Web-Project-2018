@@ -11,11 +11,11 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 	<!--//metadata -->
 	<link href="{%static "css/bootstrap.css" %}" rel="stylesheet" type="text/css" media="all" />
-	<link href="{%static "css/style.css" %}" rel="stylesheet" type="text/css" media="all" />
+	<!-- <link href="{%static "css/style.css" %}" rel="stylesheet" type="text/css" media="all" /> -->
 	<link href="{%static "css/easy-responsive-tabs.css" %}" rel='stylesheet' type='text/css'/>
 	<link rel="stylesheet" href="{%static "css/flexslider.css" %}" type="text/css" media="all" /><!-- for testimonials -->
 	<link rel="stylesheet" href="{%static "css/swipebox.css" %}">
-	<link rel="stylesheet" href="{%static "css/styleForm.css" %}">
+	<!-- <link rel="stylesheet" href="{%static "css/styleForm.css" %}"> -->
 
 	<link href="{%static "css/font-awesome.css" %}" rel="stylesheet">
 	<!-- //for bootstrap working -->
@@ -24,7 +24,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	    rel='stylesheet' type='text/css'>
 	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700" rel="stylesheet">
 
-
+	<link rel="stylesheet" href="{%static "css/form.css" %}">
+	<link rel="stylesheet" href="{%static "css/form2.css" %}">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 
@@ -49,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<nav>
 							<ul class="nav navbar-nav">
-								<li><a class="active" href="home">Home</a></li>
+								<li><a class="" href="home">Home</a></li>
 									<div class="dropdown">
 									<li onclick="myFunction()"class="dropbtn">Categories</li>
 										<div id="myDropdown" class="dropdown-content">
@@ -58,8 +60,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="review">Browse All Reviews...</a>
 										</div>
 									</div>
-								<li><a class="active" href="creUser">Register</a></li>
-								<li><a class="scroll" href="#writeReview">Write A Review</a></li>
+								<li><a class="" href="creUser">Register</a></li>
+								<li><a class="active" href="#writeReview">Write A Review</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -69,6 +71,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</nav>
 			</div>
 		</div>
+
+
+    <div id="reviewBox">
+			<div class="left3">
+				<h1 class="headerAlign">Write a review</h1>
+				<input class="input" type="text" name="firstName" placeholder="First Name">
+				<input class="input" type="text" name="lastName" placeholder="Last Name">	
+				<textarea rows="8" cols="50" placeholder="Your review..."></textarea>
+	
+				<div class="rating">
+						<input type="radio" name="star" id="star1"><label for="star1"></label>
+						<input type="radio" name="star" id="star2"><label for="star2"></label>
+						<input type="radio" name="star" id="star3"><label for="star3"></label>
+						<input type="radio" name="star" id="star4"><label for="star4"></label>
+						<input type="radio" name="star" id="star5"><label for="star5"></label>
+					</div>	
+					<div class="alignButton">
+							<input type="button" name="submitReview" value="Submit Review" class="registerbtn">
+					</div>
+	
+			</div>
+			</div>
+
+
     <script>
     /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */
