@@ -8,3 +8,4 @@ psycopg2==2.7.4
 djangorestframework==3.8.2
 django-datatable==0.3.1
 pygobject==3.28.0
+gobject = 2.56.1
