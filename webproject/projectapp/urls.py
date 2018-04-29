@@ -16,6 +16,7 @@ urlpatterns = [
     path('home', views.cat.as_view()),
     path('createUser', views.UserFormView.as_view()),
     path('creSer', views.creSer.as_view()),
+    path('upSer', views.UpdateDeleteService.as_view()),
     path('creRe', views.createReview.as_view()),
     path('review', views.reView.as_view()),
     path('services', views.vewSer.as_view()),

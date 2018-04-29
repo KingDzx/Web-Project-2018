@@ -9,7 +9,7 @@ from projectapp.service import Service
 class Review(models.Model):
     firstname = CharField(max_length = 100)
     lastname = CharField(max_length = 100)
-    services = models.ForeignKey(Service, on_delete=models.PROTECT, related_name='reviews')
+    services = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='reviews')
     rating = PositiveIntegerField(validators = [MinValueValidator(1),MaxValueValidator(5)])
     message = TextField(max_length=500)
 

@@ -10,6 +10,7 @@ from .review import Review, ReviewSerializer
 from django.views import View
 from .forms import ServiceForm, UserForm, ReviewForm
 import json
+import re
 # Create your views here.
 
 class ServiceViewSet(viewsets.ModelViewSet):
@@ -37,7 +38,7 @@ class cat(View):
             print (json_data)
             s.append(line)
         print (s)
-        return render(request, 'webpage/test.html', {'services': s})
+        return render(request, 'webpage/index.html', {'services': s})
 
 class vewSer(View):
     def get(self,request):
@@ -66,6 +67,33 @@ class creSer(View):
             form = ServiceForm(request.POST, request.FILES)
             if form.is_valid():
                 service = Service
+                service.name = form.cleaned_data['name']
+                service.service = form.cleaned_data['service']
+                service.address = form.cleaned_data['address']
+                service.description = form.cleaned_data['description']
+                form.save()
+                return HttpResponseRedirect("/home")
+        return render(request, 'webpage/registerServiceForm.html',{'form':form})
+
+class UpdateDeleteService(View):
+    def get(self,request):
+        putrequest = request
+        putrequest.method = 'PUT'
+        pattern = re.compile(r"^GET '/upSer?$")
+        matches = pattern.match(request.body.decode('utf-8'))
+        if matches:
+            put(self,putrequest)
+        form = ServiceForm()
+        return render(request, 'webpage/updateService.html',{'form':form})
+
+    def put(self,request):
+        form = ServiceForm()
+        print("Request")
+        if request.method =='PUT':
+            print("Put Request")
+            form = ServiceForm(request.PUT, request.FILES)
+            if form.is_valid():
+                service = Service.objects.filter(id = form.cleaned_data['id'])
                 service.name = form.cleaned_data['name']
                 service.service = form.cleaned_data['service']
                 service.address = form.cleaned_data['address']
@@ -115,12 +143,14 @@ class getService(View):
 class createReview(View):
     def get(self,request):
         form = ReviewForm()
-        return render(request, 'webpage/writeReview.html',{'form':form})
+        service = Service.objects.all()
+        info = {'service':service, 'form':form}
+        return render(request, 'webpage/writeReview.html',info)
 
     def post(self,request):
         form = ReviewForm()
-        #data = request.POST.get('id',False)
-        service = Service.objects.get(id = 1)
+        service = Service.objects.all()
+        info = {'service':service, 'form':form}
         print("is Valid")
         if request.method=='POST':
             form = ReviewForm(request.POST, request.FILES)
@@ -131,10 +161,10 @@ class createReview(View):
                 review.lastname = form.cleaned_data['lastname']
                 review.message = form.cleaned_data['message']
                 review.rating = form.cleaned_data['rating']
-                review.services = service
+                review.services = form.cleaned_data['services']
                 form.save()
                 return HttpResponseRedirect("/home")
-        return render(request, 'webpage/writeReview.html', {'form':form})
+        return render(request, 'webpage/writeReview.html', info)
 
 class UserFormView(View):
     form_class = UserForm
