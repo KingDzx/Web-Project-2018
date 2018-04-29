@@ -85,12 +85,15 @@ class getService(View):
     def get(self,request):
         data = request.GET['id']
         service = Service.objects.filter(id = data)
-        return render(request, 'webpage/service.html',{'service':service})
+        form = ReviewForm()
+        info = {'service':service, 'form':form}
+        return render(request, 'webpage/service.html',info)
 
     def post(self,request):
         form = ReviewForm()
-        data = request.POST.get('id',False)
-        service = Service.objects.get(id = 1)
+        data = request.GET['id']
+        service = Service.objects.filter(id = data)
+        info = {'service':service, 'form':form}
         print("is Valid")
         if request.method=='POST':
             form = ReviewForm(request.POST, request.FILES)
@@ -101,10 +104,10 @@ class getService(View):
                 review.lastname = form.cleaned_data['lastname']
                 review.message = form.cleaned_data['message']
                 review.rating = form.cleaned_data['rating']
-                review.services = service
+                review.services = form.cleaned_data['services']
                 form.save()
                 return HttpResponseRedirect("/home")
-        return render(request, 'webpage/service.html', {'service':service})
+        return render(request, 'webpage/service.html', info)
 
 class createReview(View):
     def get(self,request):
