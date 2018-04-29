@@ -3,7 +3,7 @@ Django==2.0.4
 django-datatable==0.3.1
 django-filter==1.1.0
 djangorestframework==3.8.2
-gobject==0.1.0
+gobject-introspection==1.54.1-1
 pipenv==11.10.1
 psycopg2==2.7.4
 pygobject==3.28.0
