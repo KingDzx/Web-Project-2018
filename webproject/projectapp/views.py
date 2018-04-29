@@ -40,6 +40,16 @@ class cat(View):
         print (s)
         return render(request, 'webpage/index.html', {'services': s})
 
+        # services = Service.objects.values()
+        # s = []
+        # for line in services:
+        #     json_data = json.dumps(line)
+        #     print (json_data)
+        #     s.append(line)
+        # print (s)
+        return render(request, 'webpage/index.html')
+
+
 class vewSer(View):
     def get(self,request):
         services = Service.objects.all()
