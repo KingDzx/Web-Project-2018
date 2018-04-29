@@ -1,13 +1,15 @@
-from django.shortcuts import render, render_to_response
-from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect, render_to_response
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.views.generic import View
+from django.contrib.auth import authenticate, login
 from rest_framework import viewsets
 from .customer import Customer, CustomerSerializer
 from .worker import Worker, WorkerSerializer
 from .service import Service, ServiceSerializer
 from .review import Review, ReviewSerializer
 from django.views import View
-from .forms import ServiceForm
+from .forms import ServiceForm, UserForm, ReviewForm
+import json
 # Create your views here.
 
 class ServiceViewSet(viewsets.ModelViewSet):
@@ -28,10 +30,14 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
 class cat(View):
     def get(self,request):
-        services = Service.objects.all()
-        #for line in services:
-            #print(line['service'])
-        return render(request, 'webpage/index.html', {'services':services})
+        services = Service.objects.values()
+        s = []
+        for line in services:
+            json_data = json.dumps(line)
+            print (json_data)
+            s.append(line)
+        print (s)
+        return render(request, 'webpage/test.html', {'services': s})
 
 class vewSer(View):
     def get(self,request):
@@ -48,10 +54,6 @@ class reView(View):
             #print(line['rating'])
             #print(line['message'])
         return render(request, 'webpage/browseReviews.html', {'review':rev})
-
-class creUser(View):
-    def get(self,request):
-        return render(request, 'webpage/form.html')
 
 class creSer(View):
     def get(self,request):
@@ -72,6 +74,10 @@ class creSer(View):
                 return HttpResponseRedirect("/home")
         return render(request, 'webpage/registerServiceForm.html',{'form':form})
 
+    #def put(self,request):
+
+    #def delete(self,request):
+
 class getCategoryServices(View):
     def get(self,request):
         data = request.GET['category']
@@ -83,3 +89,86 @@ class getService(View):
         data = request.GET['id']
         service = Service.objects.filter(id = data)
         return render(request, 'webpage/service.html',{'service':service})
+
+    def post(self,request):
+        form = ReviewForm()
+        data = request.POST.get('id',False)
+        service = Service.objects.get(id = 1)
+        print("is Valid")
+        if request.method=='POST':
+            form = ReviewForm(request.POST, request.FILES)
+            if(form.is_valid()):
+                print("is Valid")               
+                review = Review
+                review.firstname = form.cleaned_data['firstname']
+                review.lastname = form.cleaned_data['lastname']
+                review.message = form.cleaned_data['message']
+                review.rating = form.cleaned_data['rating']
+                review.services = service
+                form.save()
+                return HttpResponseRedirect("/home")
+        return render(request, 'webpage/service.html', {'service':service})
+
+class createReview(View):
+    def get(self,request):
+        form = ReviewForm()
+        return render(request, 'webpage/writeReview.html',{'form':form})
+
+    def post(self,request):
+        form = ReviewForm()
+        #data = request.POST.get('id',False)
+        service = Service.objects.get(id = 1)
+        print("is Valid")
+        if request.method=='POST':
+            form = ReviewForm(request.POST, request.FILES)
+            if(form.is_valid()):
+                print("is Valid")               
+                review = Review
+                review.firstname = form.cleaned_data['firstname']
+                review.lastname = form.cleaned_data['lastname']
+                review.message = form.cleaned_data['message']
+                review.rating = form.cleaned_data['rating']
+                review.services = service
+                form.save()
+                return HttpResponseRedirect("/home")
+        return render(request, 'webpage/writeReview.html', {'form':form})
+
+class UserFormView(View):
+    form_class = UserForm
+    template_name = 'webpage/form.html'
+
+    #Display a blank form
+    def get(self, request):
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
+
+    #Process form data
+    def post(self, request):
+        form = self.form_class(request.POST)
+
+        if form.is_valid():
+            user = form.save(commit=False)
+
+            #cleaned (normalized) data
+
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+
+            user.username = username
+            user.set_password(password)
+            user.save()
+
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    
+                    return HttpResponseRedirect('/home')
+
+        return render(request, self.template_name, {'form': form})
+
+
+class vizView(View):
+    def get(self, request):
+        return render(request, 'webpage/visualization.html')

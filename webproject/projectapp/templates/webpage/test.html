@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Test
+    {% for service in services %}
+        <p>{{ser.service.name}}</p>
+    {% endfor %}
+
+    <script>
+        var test = "{{ services.name }}";
+        console.log("This is a tes: " + test);
+    </script>
+</body>
+</html>
