@@ -24,11 +24,6 @@ class CustomerViewSet(viewsets.ModelViewSet):
 class WorkerViewSet(viewsets.ModelViewSet):
     queryset = Worker.objects.all()
     serializer_class = WorkerSerializer
-<<<<<<< HEAD
-
-def cat(request):
-=======
->>>>>>> 09c7e9e335226e37f264c249c7242461ae9c5439
 
 class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Review.objects.all()
