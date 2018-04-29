@@ -1,4 +1,4 @@
-Django==1.11.12
+Django==2.0.4
 pycrypto==2.6.1
 pytz==2018.4
 pyxdg==0.25
