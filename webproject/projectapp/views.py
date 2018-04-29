@@ -52,17 +52,6 @@ class reView(View):
             #print(line['message'])
         return render(request, 'webpage/browseReviews.html', {'review':rev})
 
-<<<<<<< HEAD
-=======
-class writeView(View):
-    def get(self,request):
-        return render(request, 'webpage/writeReview.html')
-
-class creUser(View):
-    def get(self,request):
-        return render(request, 'webpage/form.html')
-
->>>>>>> d857ac20f3075d82c9c6b3f09e5764025b597d39
 class creSer(View):
     def get(self,request):
         form = ServiceForm()
@@ -99,13 +88,12 @@ class createReview(View):
         return render(request, 'webpage/writeReview.html')
 
 class UserFormView(View):
-
     form_class = UserForm
     template_name = 'webpage/form.html'
 
     #Display a blank form
     def get(self, request):
-        form = self.form_class(None)
+        form = self.form_class()
         return render(request, self.template_name, {'form': form})
 
     #Process form data
@@ -130,15 +118,11 @@ class UserFormView(View):
                 if user.is_active:
                     login(request, user)
                     
-                    return redirect('/home')
+                    return HttpResponseRedirect('/home')
 
         return render(request, self.template_name, {'form': form})
-<<<<<<< HEAD
-=======
 
 
 class vizView(View):
-
     def get(self, request):
         return render(request, 'webpage/visualization.html')
->>>>>>> d857ac20f3075d82c9c6b3f09e5764025b597d39
