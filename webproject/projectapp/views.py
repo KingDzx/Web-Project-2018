@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, render_to_response
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.views.generic import View
 from django.contrib.auth import authenticate, login
 from rest_framework import viewsets
@@ -30,11 +30,14 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
 class cat(View):
     def get(self,request):
-        services = Service.objects.all()
-        # for line in services:
-        #     s = json.dumps(line)
-        #     print(s)
-        return render(request, 'webpage/index.html', {'services':services})
+        services = Service.objects.values()
+        s = []
+        for line in services:
+            json_data = json.dumps(line)
+            print (json_data)
+            s.append(line)
+        print (s)
+        return render(request, 'webpage/test.html', {'services': s})
 
 class vewSer(View):
     def get(self,request):
