@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'service4youdb',
         'USER': 'service4youdb',
         'PASSWORD': 'adminuser',
-        'HOST': 'https://webprog2018app.herokuapp.com/',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
