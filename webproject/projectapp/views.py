@@ -8,7 +8,7 @@ from .worker import Worker, WorkerSerializer
 from .service import Service, ServiceSerializer
 from .review import Review, ReviewSerializer
 from django.views import View
-from .forms import ServiceForm, UserForm
+from .forms import ServiceForm, UserForm, ReviewForm
 import json
 # Create your views here.
 
@@ -71,6 +71,10 @@ class creSer(View):
                 return HttpResponseRedirect("/home")
         return render(request, 'webpage/registerServiceForm.html',{'form':form})
 
+    #def put(self,request):
+
+    #def delete(self,request):
+
 class getCategoryServices(View):
     def get(self,request):
         data = request.GET['category']
@@ -83,9 +87,48 @@ class getService(View):
         service = Service.objects.filter(id = data)
         return render(request, 'webpage/service.html',{'service':service})
 
+    def post(self,request):
+        form = ReviewForm()
+        data = request.POST.get('id',False)
+        service = Service.objects.get(id = 1)
+        print("is Valid")
+        if request.method=='POST':
+            form = ReviewForm(request.POST, request.FILES)
+            if(form.is_valid()):
+                print("is Valid")               
+                review = Review
+                review.firstname = form.cleaned_data['firstname']
+                review.lastname = form.cleaned_data['lastname']
+                review.message = form.cleaned_data['message']
+                review.rating = form.cleaned_data['rating']
+                review.services = service
+                form.save()
+                return HttpResponseRedirect("/home")
+        return render(request, 'webpage/service.html', {'service':service})
+
 class createReview(View):
     def get(self,request):
-        return render(request, 'webpage/writeReview.html')
+        form = ReviewForm()
+        return render(request, 'webpage/writeReview.html',{'form':form})
+
+    def post(self,request):
+        form = ReviewForm()
+        #data = request.POST.get('id',False)
+        service = Service.objects.get(id = 1)
+        print("is Valid")
+        if request.method=='POST':
+            form = ReviewForm(request.POST, request.FILES)
+            if(form.is_valid()):
+                print("is Valid")               
+                review = Review
+                review.firstname = form.cleaned_data['firstname']
+                review.lastname = form.cleaned_data['lastname']
+                review.message = form.cleaned_data['message']
+                review.rating = form.cleaned_data['rating']
+                review.services = service
+                form.save()
+                return HttpResponseRedirect("/home")
+        return render(request, 'webpage/writeReview.html', {'form':form})
 
 class UserFormView(View):
     form_class = UserForm
