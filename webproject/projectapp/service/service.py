@@ -43,6 +43,5 @@ class Service(models.Model):
     name = CharField(max_length = 150)
     address = TextField(max_length = 200)
     description = TextField(max_length = 250)
-
     class Meta:
         ordering = ('name',)

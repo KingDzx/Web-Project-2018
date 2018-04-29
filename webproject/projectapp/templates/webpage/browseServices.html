@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% load staticfiles %}
+  <title>Browse All Services</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="keywords" content="wooden Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<!--//metadata -->
+	<link href="{%static "css/bootstrap.css" %}" rel="stylesheet" type="text/css" media="all" />
+	<!-- <link href="css/style.css" rel="stylesheet" type="text/css" media="all" /> -->
+<link href="{%static "css/easy-responsive-tabs.css" %}" rel='stylesheet' type='text/css'/>
+<link rel="stylesheet" href="{%static "css/flexslider.css" %}" type="text/css" media="all" /><!-- for testimonials -->
+<link rel="stylesheet" href="{%static "css/swipebox.css" %}">
+
+	<link href="{%static "css/font-awesome.css" %}" rel="stylesheet">
+	<!-- //for bootstrap working -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+	<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic'
+	    rel='stylesheet' type='text/css'>
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700" rel="stylesheet">
+
+
+      <!-- <link rel="stylesheet" href="css/styleForm.css"> -->
+      <link rel="stylesheet" href="{%static "css/form.css" %}"> 
+			<link rel="stylesheet" href="{%static "css/form2.css" %}">
+			<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+</head>
+
+
+<body class="bs-body">
+	<!-- header -->
+		<div class="header" id="home">
+			<div class="content white">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container">
+						<div class="navbar-header">
+							<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button> -->
+                    <a class="navbar-brand" href="home">
+							<h1 class="logoType" ><span><img class="logo" src="{%static "images/logo.png" %}"></span>Service4You </h1>
+						</a>
+					</div>
+					<!--/.navbar-header-->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<nav>
+							<ul class="nav navbar-nav">
+								<li><a class="active" href="home">Home</a></li>
+									<div class="dropdown">
+									<li onclick="myFunction()"class="dropbtn">Categories</li>
+										<div id="myDropdown" class="dropdown-content">
+										<a href="creSer">Register Your Service</a>
+										<a href="services">Browse All Services...</a>
+										<a href="review">Browse All Reviews...</a>
+										</div>
+									</div>
+								<li><a class="active" href="createUser">Register</a></li>
+								<li><a class="active" href="creRe">Write A Review</a></li>
+							</ul>
+						</nav>
+					</div>
+						<!--/.navbar-collapse-->
+						<!--/.navbar-->
+					</div>
+				</nav>
+			</div>
+		</div>
+
+    <div class="agileits-title2">
+    <div class="w3-heading-all2">
+    <h3>Services</h3>
+    </div>
+    <div class="clearfix"> </div>
+    </div>
+
+  <div class="service-list">
+    <a href="getCatSer?category=Appliance Repair">
+        <div class="service-container" id="sc1">
+            <p class="service-title">Appliance Repair</p>
+            <p class="img-holder"><img src="{% static "images/services/1.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Door Installation">
+        <div class="service-container" id="sc2">
+            <p class="service-title">Door Installation</p>
+            <p class="img-holder"><img src="{% static "images/services/2.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a> 
+    <a href="getCatSer?category=Electrician">
+        <div class="service-container" id="sc3">
+            <p class="service-title">Electrician</p>
+            <p class="img-holder"><img src="{% static "images/services/3.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div> 
+    </a> 
+    <a href="getCatSer?category=Flooring">
+        <div class="service-container" id="sc4">
+            <p class="service-title">Flooring</p>
+            <p class="img-holder"><img src="{% static "images/services/4.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Upholstery">
+        <div class="service-container" id="sc5">
+            <p class="service-title">Upholstery</p>
+            <p class="img-holder"><img src="{% static "images/services/5.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Garage">
+        <div class="service-container" id="sc6">
+            <p class="service-title">Garage</p>
+            <p class="img-holder"><img src="{% static "images/services/6.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Home Security System">
+        <div class="service-container" id="sc7">
+            <p class="service-title">Home Security System</p>
+            <p class="img-holder"><img src="{% static "images/services/7.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Interior Design">
+        <div class="service-container" id="sc8">
+            <p class="service-title">Interior Design</p>
+            <p class="img-holder"><img src="{% static "images/services/8.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Landscaping">
+        <div class="service-container" id="sc9">
+            <p class="service-title">Landscaping</p>
+            <p class="img-holder"><img src="{% static "images/services/9.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Lighting Installation">
+        <div class="service-container" id="sc10">
+            <p class="service-title">Lighting Installation</p>
+            <p class="img-holder"><img src="{% static "images/services/10.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Moving">
+        <div class="service-container" id="sc11">
+            <p class="service-title">Moving</p>
+            <p class="img-holder"><img src="{% static "images/services/11.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+
+    <a href="getCatSer?category=Pest Control">
+        <div class="service-container" id="sc12">
+            <p class="service-title">Pest Control</p>
+            <p class="img-holder"><img src="{% static "images/services/12.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>        
+    </a>
+
+    <a href="getCatSer?category=Plumber">
+        <div class="service-container" id="sc13">
+            <p class="service-title">Plumber</p>
+            <p class="img-holder"><img src="{% static "images/services/13.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>        
+    </a>
+    <a href="getCatSer?category=Roofing">
+        <div class="service-container" id="sc14">
+            <p class="service-title">Roofing</p>
+            <p class="img-holder"><img src="{% static "images/services/14.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Auto">
+        <div class="service-container" id="sc15">
+            <p class="service-title">Auto</p>
+            <p class="img-holder"><img src="{% static "images/services/15.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Auto Body Repair">
+        <div class="service-container" id="sc16">
+            <p class="service-title">Auto Body Repair</p>
+            <p class="img-holder"><img src="{% static "images/services/16.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Auto Service">
+        <div class="service-container" id="sc17">
+            <p class="service-title">Auto Service</p>
+            <p class="img-holder"><img src="{% static "images/services/17.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Auto Repair">
+        <div class="service-container" id="sc18">
+            <p class="service-title">Auto Repair</p>
+            <p class="img-holder"><img src="{% static "images/services/18.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Health">
+        <div class="service-container" id="sc19">
+            <p class="service-title">Health</p>
+            <p class="img-holder"><img src="{% static "images/services/19.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Chiropractor">
+        <div class="service-container" id="sc20">
+            <p class="service-title">Chiropractor</p>
+            <p class="img-holder"><img src="{% static "images/services/20.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Counseling & Mental Health">
+        <div class="service-container" id="sc21">
+            <p class="service-title">Counseling & Mental Health</p>
+            <p class="img-holder"><img src="{% static "images/services/21.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Dentistry">
+        <div class="service-container" id="sc22">
+            <p class="service-title">Dentistry</p>
+            <p class="img-holder"><img src="{% static "images/services/22.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Dermatology">
+        <div class="service-container" id="sc23">
+            <p class="service-title">Dermatology</p>
+            <p class="img-holder"><img src="{% static "images/services/23.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Eyecare">
+        <div class="service-container" id="sc24">
+            <p class="service-title">Eyecare</p>
+            <p class="img-holder"><img src="{% static "images/services/24.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Fitness & Weight Management">
+        <div class="service-container" id="sc25">
+            <p class="service-title" style="font-size: 23px;vertical-align: middle;padding-top: 3px;">Fitness & Weight Management</p>
+            <p class="img-holder"><img src="{% static "images/services/25.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Health Care Facility">
+        <div class="service-container" id="sc26">
+            <p class="service-title">Health Care Facility</p>
+            <p class="img-holder"><img src="{% static "images/services/26.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Home Health Care">
+        <div class="service-container" id="sc27">
+            <p class="service-title">Home Health Care</p>
+            <p class="img-holder"><img src="{% static "images/services/27.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Medical Specialist">
+        <div class="service-container" id="sc28">
+            <p class="service-title">Medical Specialist</p>
+            <p class="img-holder"><img src="{% static "images/services/28.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Pets">
+        <div class="service-container" id="sc29">
+            <p class="service-title">Pets</p>
+            <p class="img-holder"><img src="{% static "images/services/29.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Pet Care & Health Services">
+        <div class="service-container" id="sc30">
+            <p class="service-title">Pet Care & Health Services</p>
+            <p class="img-holder"><img src="{% static "images/services/30.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Finance Advising">
+        <div class="service-container" id="sc31">
+            <p class="service-title">Finance Advising</p>
+            <p class="img-holder"><img src="{% static "images/services/31.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Transportation">
+        <div class="service-container" id="sc32">
+            <p class="service-title">Transportation</p>
+            <p class="img-holder"><img src="{% static "images/services/32.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    <a href="getCatSer?category=Wedding Planning">
+        <div class="service-container" id="sc33">
+            <p class="service-title">Wedding Planning</p>
+            <p class="img-holder"><img src="{% static "images/services/33.jpg"%}" alt="wood works.png"></p>
+            <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem fugit voluptatibus, esse reiciendis recusandae, illum dicta in et assumenda adipisci non. Inventore quaerat praesentium voluptatibus ex molestiae, blanditiis facilis aliquam.</p>
+        </div>
+    </a>
+    
+    </div>
+  </div>
+
+
+
+
+   <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+    }
+    </script>
+  </body>
+</html>
