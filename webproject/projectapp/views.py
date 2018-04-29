@@ -10,7 +10,7 @@ from .review import Review, ReviewSerializer
 from django.views import View
 from .forms import ServiceForm, UserForm, ReviewForm
 import json
-import re
+import request
 # Create your views here.
 
 class ServiceViewSet(viewsets.ModelViewSet):
@@ -35,9 +35,9 @@ class cat(View):
         s = []
         for line in services:
             json_data = json.dumps(line)
-            print (json_data)
+            #print (json_data)
             s.append(line)
-        print (s)
+        #print (s)
         return render(request, 'webpage/index.html', {'services': s})
 
         # services = Service.objects.values()
