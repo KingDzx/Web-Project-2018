@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.views.generic import View
+from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth import authenticate, login
+from django.core.paginator import Paginator
 from rest_framework import viewsets
 from .customer import Customer, CustomerSerializer
 from .worker import Worker, WorkerSerializer
@@ -10,7 +12,8 @@ from .review import Review, ReviewSerializer
 from django.views import View
 from .forms import ServiceForm, UserForm, ReviewForm
 import json
-import request
+from django.urls import reverse_lazy
+import re
 # Create your views here.
 
 class ServiceViewSet(viewsets.ModelViewSet):
@@ -57,14 +60,34 @@ class vewSer(View):
 
 class reView(View):
     def get(self,request):
-        service = Service.objects.all()
-        rev = Review.objects.all()
+        #service = Service.objects.all()
+        #rev = Review.objects.all()
         #for line in rev:
             #print()
             #print(line['services'])
             #print(line['rating'])
             #print(line['message'])
-        return render(request, 'webpage/browseReviews.html', {'review':rev})
+        review = []
+        data = Review.objects.all()
+        for x in range (0,len(data),5):
+            review.append(data[x:x+5])
+            print(review)
+        p = Paginator(review,1)
+        page = request.GET.get('page')
+        reviews = p.get_page(page)
+        return render(request, 'webpage/browseReviews.html', {'review':reviews})
+    
+class deleteSum(DeleteView):
+    model = Review
+    template_name = 'webpage/delete.html'
+    success_url = reverse_lazy('index')
+    #return HttpResponseRedirect('/home')
+
+class updateSum(UpdateView):
+    model = Review
+    template_name = 'webpage/update.html'
+    fields = ['firstname','lastname','rating','message','services'] 
+    success_url = reverse_lazy('index')
 
 class creSer(View):
     def get(self,request):
@@ -176,6 +199,13 @@ class createReview(View):
                 return HttpResponseRedirect("/home")
         return render(request, 'webpage/writeReview.html', info)
 
+class getReview(View):
+    def get(self,request):
+        data = request.GET['id']
+        review = Review.objects.filter(id = data)
+        info = {'review':review}
+        return render(request, 'webpage/getReview.html',info)
+
 class UserFormView(View):
     form_class = UserForm
     template_name = 'webpage/form.html'
@@ -211,6 +241,40 @@ class UserFormView(View):
 
         return render(request, self.template_name, {'form': form})
 
+class loginView(View):
+    form_class = UserForm
+    template_name = 'webpage/form.html'
+
+    #Display a blank form
+    def get(self, request):
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
+
+    #Process form data
+    def post(self, request):
+        form = self.form_class(request.POST)
+
+        if form.is_valid():
+            user = form.save(commit=False)
+
+            #cleaned (normalized) data
+
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+
+            user.username = username
+            user.set_password(password)
+            user.save()
+
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    
+                    return HttpResponseRedirect('/home')
+
+        return render(request, self.template_name, {'form': form})
 
 class vizView(View):
     def get(self, request):

@@ -74,6 +74,71 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</nav>
 			</div>
 		</div>
+		<div class="banner-bottom" id="about">
+				<div class="container">
+				<div class="w3-heading-all">
+						<h3>Reviews and Ratings</h3>
+					</div>
+					{% for rev in review %}
+						{%for x in rev%}
+							<div class="inner_sec_info_agileits_w3">
+									<div class="row">
+											<div class="col-md-4 grid_info">
+												<div class="icon_info">
+														<p style="text-align:left">
+															{% if x.rating == 1 %}
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															{% endif %}
+
+															{% if x.rating == 2 %}
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															{% endif %}
+
+															{% if x.rating == 3 %}
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															{% endif %}
+
+															{% if x.rating == 4 %}
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															{% endif %}
+
+															{% if x.rating == 5 %}
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															<i class="fa fa-star" style="color:lawngreen" aria-hidden="true"></i>
+															{% endif %}
+														</p>
+														<p>{{x.services.name}}</p>
+														<a href="getRev?id={{x.id}}">{{x.message}}</a>
+														
+														<div class="client">
+															<img width="50%" height="50%"src="{%static "images/review1.jpg"%}" alt="" />
+															<h5>{{x.firstname}} {{x.lastname}}</h5>
+															<div class="clearfix"> </div>
+														</div>
+														<div>
+															<form method="DELETE" action="deleteSum {{x.id}}">
+																	<button name='id' value='{{x.id}}' type="submit" onclick="deleteSum">Delete Comment</button>
+															</form>
+														</div>
+													</div>
+												</div>
+										</div>
+							</div>
+						{% endfor %}
+					{% endfor %}
+				</div>
+			</div>
+		
+
     <script>
     /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */
